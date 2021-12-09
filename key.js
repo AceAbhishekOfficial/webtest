@@ -1,7 +1,10 @@
 const Dpass="oooo"
 var pass = "oooo";
+
 function Click(b) 
 {
+    var aud = document.getElementById("beep"); 
+    aud.play(); 
     if (pass.length >= 4) pass = "";
     pass += b;
     document.getElementById("pass").innerHTML = beautify(pass);
@@ -25,6 +28,8 @@ function er()
 }
 function call() 
 {
+    var aud = document.getElementById("beepS"); 
+    aud.play(); 
     pass=Dpass;
     document.getElementById("pass").innerHTML = beautify(pass);
     document.getElementById("pass").animate([
