@@ -3,9 +3,12 @@ const Dpass="oooo"
 var pass = "oooo";
 var locked="";
 var password="";
+//var locked = 1;
+
 Lock();
 Pass();
 setTimeout(hideSucess,200);
+setTimeout(UpdateButton,200);
 
 function Click(b) 
 {
@@ -34,29 +37,69 @@ function er()
 }
 function call() 
 {
-    console.log("lock pass=|"+pass+"| password=|"+password+"ab|");
     var aud = document.getElementById("beepS"); 
     aud.play(); 
-    if(pass==password)
+    //alert("locked = "+locked);
+    if(locked==1)
     {
-        pass="oooo";
+        
+        
+        if(pass==password)
+        {
+            pass=Dpass;
+            document.getElementById("pass").innerHTML = beautify(pass);
+            //alert("door open");
+            locked=2;
+            showSucess();
+            UpdateButton();
+            updateSystem();
+        }
+        else
+        {
+        pass=Dpass;
         document.getElementById("pass").innerHTML = beautify(pass);
-        //alert("door open");
-        showSucess();
+        document.getElementById("pass").animate([
+            {transform: 'translate(20px,0px)'},
+            {transform: 'translate(-20px,0px)'},
+            
+        ], {
+            duration: 100,
+            iterations: 3,
+            delay: 0
+        });
+        }
     }
     else
     {
-    pass=Dpass;
-    document.getElementById("pass").innerHTML = beautify(pass);
-    document.getElementById("pass").animate([
-        {transform: 'translate(20px,0px)'},
-        {transform: 'translate(-20px,0px)'},
-        
-      ], {
-        duration: 100,
-        iterations: 3,
-        delay: 0
-      });
+        if(pass=="oooo" || pass.length<4)
+        {
+            pass=Dpass;
+            document.getElementById("pass").innerHTML = beautify(pass);
+            document.getElementById("pass").animate([
+                {transform: 'translate(20px,0px)'},
+                {transform: 'translate(-20px,0px)'},
+                
+            ], {
+                duration: 100,
+                iterations: 3,
+                delay: 0
+            });
+        }
+        else
+        {
+            //post
+            password=pass;
+           
+            pass="oooo";
+            document.getElementById("pass").innerHTML = beautify(pass);
+            locked=1;
+            showSucess();
+            
+            
+            UpdateButton();
+            updateSystem();
+            
+        }
     }
 
 }
@@ -74,7 +117,13 @@ function UpdateLock(s)
     var k = s.lastIndexOf(",");
     s=s.substring(k+1);
     //document.write(s)+"<br>";
-    locked=s;
+    for(var a=0;a<s.length;a++)
+    if(s.charAt(a)>='0' && s.charAt(a)<='9')
+    locked+=s.charAt(a);
+    locked=locked%3;
+    UpdateButton();
+    console.log("Locked="+locked);
+
 }
 async function Pass()
 {
@@ -94,11 +143,16 @@ function UpdatePass(s)
     for(var a=0;a<s.length;a++)
     if(s.charAt(a)>='0' && s.charAt(a)<='9')
     password+=s.charAt(a);
-    console.log("password upadted = |"+password+'|');
+    console.log("password="+password);
+    
 }
 
 function showSucess()
 {
+    if(locked==2)
+    document.getElementById("lockStat").innerHTML="Opened";
+    else
+    document.getElementById("lockStat").innerHTML="Locked";
     var lock  = document.getElementById("lock");
     lock.style.display="none";
     var sucess = document.getElementById("sucess");
@@ -113,4 +167,19 @@ function hideSucess()
     lock.style.display="block";
     var x = document.getElementById("sucess");
     x.style.display="none";
+}
+function UpdateButton()
+{
+    if(locked==2)
+    document.getElementById("submit").innerHTML="<i class=\"fa fa-lock\"></i></button>"; 
+    else
+    document.getElementById("submit").innerHTML="<i class=\"fa fa-unlock-alt\"></i>";
+}
+
+function updateSystem()
+{
+    url="https://api.thingspeak.com/update.json?api_key=DF4NIWCFWJ0JGNES&field1="+password+"&field2="+locked;
+    fetch(url);
+    console.log(url);
+    console.log("data updated");
 }
