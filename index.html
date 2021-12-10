@@ -14,34 +14,62 @@
 <audio id="beep">
     <source src="assets/audio/beep.mp3">
     Your browser does not support the audio element.
-  </audio>
-  <audio id="beepS">
+</audio>
+<audio id="beepS">
     <source src="assets/audio/beepS.mp3">
     Your browser does not support the audio element.
-  </audio>
-<body style="background: linear-gradient(180deg, rgb(0,13,61) 35%, rgb(0,80,85) 82%) no-repeat, #005055;padding-top: 20%;">
+</audio>
+
+<body
+    style="background: linear-gradient(180deg, rgb(0,13,61) 35%, rgb(0,80,85) 82%) no-repeat, #005055;padding-top: 20%;">
     <section id="main" style="text-align: center;margin-top: 0px;margin-bottom: 0px;">
+        <section id="lock">
         <h1 style="color: rgb(255,255,255);font-size: 24px;font-family: Abel, sans-serif;">Enter Password</h1>
-        <h1 id= "pass" style="color: rgb(255,255,255);font-size: 40px;font-family: Abel, sans-serif;margin-top: 25px;">o o o o</h1>
-        <section style="margin-top: 40px;">
-            <button onclick="Click(1)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);margin: 10px;height: 74.8px;border-width: 2px;">1</button>
-            <button onclick="Click(2)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">2</button>
-            <button onclick="Click(3)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">3</button></section>
-        <section>
-            <button onclick="Click(4)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">4</button>
-            <button onclick="Click(5)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">5</button>
-            <button onclick="Click(6)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">6</button></section>
-        <section>
-            <button onclick="Click(7)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">7</button>
-            <button onclick="Click(8)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">8</button>
-            <button onclick="Click(9)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">9</button></section>
-        <section>
-            <button id="submit" onclick="call()" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;"><i class="fa fa-lock"></i></button>
-            <button onclick="Click(0)" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">0</button>
-            <button onclick="er()" class="btn btn-primary" type="button" style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">⌫</button></section>
+        <h1 id="pass" style="color: rgb(255,255,255);font-size: 40px;font-family: Abel, sans-serif;margin-top: 25px;">o
+            o o o</h1>
+        
+            <section style="margin-top: 40px;">
+
+                <button onclick="Click(1)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);margin: 10px;height: 74.8px;border-width: 2px;">1</button>
+                <button onclick="Click(2)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">2</button>
+                <button onclick="Click(3)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">3</button>
+            </section>
+            <section>
+                <button onclick="Click(4)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">4</button>
+                <button onclick="Click(5)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">5</button>
+                <button onclick="Click(6)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">6</button>
+            </section>
+            <section>
+                <button onclick="Click(7)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">7</button>
+                <button onclick="Click(8)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">8</button>
+                <button onclick="Click(9)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">9</button>
+            </section>
+            <section>
+                <button id="submit" onclick="call()" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;"><i
+                        class="fa fa-lock"></i></button>
+                <button onclick="Click(0)" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">0</button>
+                <button onclick="er()" class="btn btn-primary" type="button"
+                    style="border-radius: 100%;font-size: 30px;width: 74.8px;background: rgba(0,123,255,0);border-width: 2px;margin: 10px;height: 74.8px;">⌫</button>
+            </section>
+
+        </section>
+        <div id="sucess" >
+            <section style="margin-top: 200px;"><img src="assets/img/checkmark-transparent.gif" style="width: 131px;">
+            </section>
+        </div>
     </section>
-    <!-- <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+
 </body>
 
 </html>
